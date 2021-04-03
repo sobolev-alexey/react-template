@@ -1,0 +1,31 @@
+name: ci
+on: [pull_request]
+jobs:
+  run-and-test:
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        # run 3 copies of the current job in parallel
+        containers: [1, 2, 3]
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      - name: Run Cypress tests 🧪
+        uses: cypress-io/github-action@v2
+        with:
+          build: npx cypress info
+          browser: firefox
+          record: true
+          parallel: true
+          group: 'all-tests'
+          tag: 'github-actions'
+          yarn: true
+          start: yarn start
+          # start: npm start
+          wait-on: 'http://localhost:3000'
+        env:
+          # pass the record key as environment variable
+          # during this CI step
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
