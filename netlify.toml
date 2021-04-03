@@ -1,6 +1,6 @@
 # [build]
-# command = "npm run build"
-# publish = "dist"
+  command = "yarn build"
+  publish = "dist"
 [build.environment]
   # cache Cypress binary in local "node_modules" folder
   # so Netlify caches it
@@ -12,11 +12,12 @@
   [plugins.inputs]
     record = true
     group = 'deployed'
+    spec = "cypress/integration/smoke/**/*.js"
   # run Cypress tests before building and deploying
   [plugins.inputs.preBuild]
     enable = true
     # call the same commands as we do locally
-    start = 'react-scripts start'
+    start = 'yarn start'
     wait-on = 'http://localhost:3000'
     record = true
     group = 'before deploy'
