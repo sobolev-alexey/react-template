@@ -5,6 +5,19 @@
     "name": "Alexey Sobolev",
     "website": "https://lexer.dev"
   },
+  "description": "Boilerplate project for React with Axios, Ant, SASS",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sobolev-alexey/react-template.git"
+  },
+  "keywords": [
+    "react",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sobolev-alexey/react-template/issues"
+  },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "antd": "^4.15.0",
@@ -21,7 +34,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cy:run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +55,10 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^5.0.0"
+    "cypress": "^6.8.0",
+    "netlify-plugin-cypress": "^2.2.0",
+    "node-sass": "^5.0.0",
+    "prettier": "^2.2.1",
+    "start-server-and-test": "^1.12.1"
   }
 }
