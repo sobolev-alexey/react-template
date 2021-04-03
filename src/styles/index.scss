@@ -1,0 +1,39 @@
+@import './breakpoints';
+@import './colors';
+@import './variables';
+@import './text';
+@import './button';
+@import './antd';
+@import './content';
+
+@import '~sass-mq';
+
+body {
+  position: relative; 
+  height: 100%;
+  width: 100%;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // background: url('../assets/background.jpg') no-repeat top left fixed; 
+  // -webkit-background-size: cover;
+  // -moz-background-size: cover;
+  // -o-background-size: cover;
+  // background-size: cover;
+
+  // @include mq($until: desktop) {
+  //   background-position-x: center;
+  // }
+
+  // @include mq($until: tablet) {
+  //   background-position-x: right;
+  // }
+
+  @include mq($until: mobile) {
+    align-items: center;
+  }
+}
+
+

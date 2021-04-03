@@ -1,0 +1,30 @@
+@import '~sass-mq';
+
+h1, h2, h3, h4, h5, h6, p, span {
+    font-family: 'Metropolis', 'Open Sans', -apple-system, sans-serif;
+    color: $base-color;
+    outline: none;
+
+    &.ant-typography {
+        color: $base-color;
+
+        &.heading {
+            color: $heading-color;
+        }
+    }
+}
+
+a, button {
+    font-family: 'Metropolis', 'Open Sans', -apple-system, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+a {
+    color: $link-color;
+
+    &:visited {
+        color: $link-color;
+        text-decoration: none;
+    }
+}
